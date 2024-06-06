@@ -1,0 +1,34 @@
+.popular {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+    padding: 20px; /* Add padding to create space around the content */
+}
+
+.popular h1 {
+    color: #171717;
+    /* font-size: 2.5rem;  */
+    font-weight: 600;
+    margin-bottom: 10px; /* Add margin bottom to create space between heading and hr */
+}
+
+.popular hr {
+    width: 200px; /* Ensure the hr spans the entire width */
+    height: 6px;
+
+    border-radius: 10px;
+    background-color: #252525;
+}
+.popular-item{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    justify-content: center;
+    width: 100%; /* Ensure the grid occupies the full width */
+
+}
+
+
+
+/* Style for individual item can be added here if necessary */

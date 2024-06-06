@@ -1,0 +1,28 @@
+.new-collections {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+    padding: 20px; /* Add padding to create space around the content */
+}
+
+.new-collections h1 {
+    color: #171717;
+    /* font-size: 2.5rem;  */
+    font-weight: 600;
+    margin-bottom: 10px; /* Add margin bottom to create space between heading and hr */
+}
+
+.new-collections hr {
+    width: 200px; /* Ensure the hr spans the entire width */
+    height: 6px;
+
+    border-radius: 10px;
+    background-color: #252525;
+}
+.collections{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 50px;
+    gap:30px;
+}
