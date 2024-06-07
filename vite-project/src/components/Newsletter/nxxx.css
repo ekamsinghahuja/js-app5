@@ -28,6 +28,24 @@
     width:730px;
     height: 70px;
     border-radius: 80px;
-    
+    border: 1px solid #e3e3e3;
 
+
+}
+.newsletter input{
+    width: 500px;
+    margin-left: 30px;
+    border: none;
+    outline: none;
+    color: #616161;
+    font-size: 16px;
+}
+.newsletter div button{
+    width: 210px;
+    height: 70px;
+    border-radius: 80px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
 }

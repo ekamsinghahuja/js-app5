@@ -9,6 +9,11 @@ import ShopCategpry from './pages/ShopCategpry'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
 import LoginSignUp from './pages/LoginSignUp'
+import Footer from './components/Footer/Footer'
+import men_banner from './assets/banner_mens.png'
+import women_banner from './assets/banner_women.png'
+import kids_banner from './assets/banner_kids.png'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,20 +25,17 @@ function App() {
        <Navbar />
         <Routes>
             <Route path="/" element={<Shop />} />
-            <Route path="/mens" element={<ShopCategpry category='mens'/>} />
-            <Route path="/womens" element={<ShopCategpry category='womens'/>} />
-            <Route path="/kids" element={<ShopCategpry category='kid'/>} />
-            <Route path='/products' elements={<Product/>}/>
-            <Route path=':productId' elements={<Product/>}/>
-            <Route path='/cart' elements={<Cart/>}/>
-            <Route path='/login' elements={<LoginSignUp/>}/>
+            <Route path="/login" element={<LoginSignUp/>}/>
+            <Route path="/mens" element={<ShopCategpry banner = {men_banner} category='men'/>} />
+            <Route path="/womens" element={<ShopCategpry banner={women_banner} category='women'/>} />
+            <Route path="/kids" element={<ShopCategpry banner={kids_banner} category='kid'/>} />
+            <Route path='/products' element={<Product/>}/>
+            <Route path=':productId' element={<Product/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+            
         </Routes>
+        <Footer/>
       </BrowserRouter>
-
-      
-
-
-      
     </div>
   )
 }
