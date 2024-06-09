@@ -120,3 +120,10 @@
 .proceed-to-checkout:hover {
     background-color: #d05e5e;
 }
+.nothing-in-cart {
+    text-align: center;
+    font-size: 24px;
+    margin: 50px 0;
+    color: #555;
+    font-weight: bold;
+}
