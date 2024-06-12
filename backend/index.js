@@ -24,6 +24,8 @@ const storage = multer.diskStorage({
     }
 });
 
+// const Product = mongoose.model("")
+
 const upload = multer({ storage: storage });
 
 app.use('/images', express.static('upload/images'));
