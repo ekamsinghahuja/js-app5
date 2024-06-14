@@ -1,0 +1,99 @@
+.list-product {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.list-product h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.listproduct-format-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #555;
+}
+
+.listproduct-allproduct {
+    width: 100%;
+}
+
+.listproduct-format {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.listproduct-format img.listproduct-product-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.listproduct-format p {
+    margin: 0;
+    color: #555;
+}
+
+img.list_product_remove_icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .listproduct-format-main,
+    .listproduct-format {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .listproduct-format-main,
+    .listproduct-format {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .listproduct-format-main p:nth-child(4),
+    .listproduct-format p:nth-child(4),
+    .listproduct-format-main p:nth-child(5),
+    .listproduct-format p:nth-child(5) {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .listproduct-format-main,
+    .listproduct-format {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .listproduct-format-main p:nth-child(3),
+    .listproduct-format p:nth-child(3) {
+        display: none;
+    }
+
+    .listproduct-format img.listproduct-product-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .listproduct-format-main p:nth-child(2),
+    .listproduct-format p:nth-child(2) {
+        display: none;
+    }
+}
