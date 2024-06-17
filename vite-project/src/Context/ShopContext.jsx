@@ -20,7 +20,7 @@ const ShopContextProvider = (props) => {
     useEffect(() => {
         fetch('https://ecomm-website-backend.onrender.com/allproduct')
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => setAllProduct(data))
             
     }, []);
     const addToCart = (itemId)=>{

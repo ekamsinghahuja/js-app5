@@ -36,7 +36,7 @@ const ProductDisplay = (props) => {
             </div>
             <div className='productdisplay-right-prices'>
                 <div className='productdisplay-right-prices-old'>{product.old_price}</div>
-                <div className='productdisplay-right-prices-old'>{product.new_price}</div>
+                <div className='productdisplay-right-prices-new'>{product.new_price}</div>
             </div>
             <div className="product-right-display">
                 Customers like the fit, comfort, quality and value of the shirt. 

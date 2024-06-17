@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import './Pop.css'
 import Item from '../Items/Items'
 
-import data_product from '../../assets/data'
+// import data_product from '../../assets/data'
 
 const Popular = () => {
+  const [data_product,set_pop] = useState([])
+  useEffect(()=>{
+    fetch('https://ecomm-website-backend.onrender.com/popinwom')
+    .then((response)=>response.json())
+    .then((data)=>set_pop(data));
+  }, [])
+
   return (
+    
     <div className='popular'>
         
         <h1>POPULAR IN WOMEN</h1>
