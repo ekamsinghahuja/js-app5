@@ -20,7 +20,7 @@ const ShopContextProvider = (props) => {
     const fetchCartData = async () => {
         const token = localStorage.getItem('auth-token'); 
         if (token) {
-            const response = await fetch('http://localhost:9000/cartget', {
+            const response = await fetch('https://ecomm-website-backend.onrender.com/cartget', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ const ShopContextProvider = (props) => {
         if (localStorage.getItem('auth-token')) {
             const authToken = localStorage.getItem('auth-token');
     
-            fetch('http://localhost:9000/addtocart', {
+            fetch('https://ecomm-website-backend.onrender.com/addtocart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ const ShopContextProvider = (props) => {
         if (localStorage.getItem('auth-token')) {
             const authToken = localStorage.getItem('auth-token');
     
-            fetch('http://localhost:9000/removefromcart', {
+            fetch('https://ecomm-website-backend.onrender.com/removefromcart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
