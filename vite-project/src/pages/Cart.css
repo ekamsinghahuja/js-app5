@@ -1,4 +1,3 @@
-.cartPage{
-    height: 100vh;
-
+.cartPage {
+    min-height: 100vh; 
 }

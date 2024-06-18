@@ -1,8 +1,4 @@
-/* CartItem.css */
 
-/* CartItem.css */
-
-/* CartItem.css */
 
 .cartitems {
     margin: 100px 170px;
@@ -11,7 +7,7 @@
 .cartitems hr {
     border: 0;
     height: 3px;
-    background: #e2e2e2;
+    background: black;
 }
 
 .cartitem-format-main {
@@ -52,13 +48,14 @@
 }
 
 .cartitems-quantity {
-    background-color: #ffffff;
+    background: linear-gradient(to right, #000000, #434343);
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 5px 10px;
     cursor: default;
     text-align: center;
     display: inline-block;
+    color: white;
 }
 
 .cartitems-format img {
@@ -78,15 +75,16 @@
 .cartitems-total {
     width: 400px;
     padding: 30px;
-    background-color: #f9f9f9;
+    background:linear-gradient(to right, #000000, #434343);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 
 .cartitems-total h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: white;
     text-align: center;
 }
 
@@ -95,7 +93,7 @@
     justify-content: space-between;
     margin: 15px 0;
     font-size: 18px;
-    color: #454545;
+    color: white;
 }
 
 .cartitems-total-item h3 {
@@ -126,4 +124,62 @@
     margin: 50px 0;
     color: #555;
     font-weight: bold;
+}
+@media (max-width: 768px) {
+    .cartitems {
+        margin: 60px 20px; 
+    }
+
+    .cartitems-format,
+    .cartitem-format-main {
+        grid-template-columns: 1fr 2fr; 
+        font-size: 14px; 
+    }
+
+    .cartitems-total {
+        width: 250px;
+        padding: 15px; 
+    }
+
+    .cartitems-total h1 {
+        font-size: 18px; 
+        margin-bottom: 10px;
+    }
+
+    .cartitems-total-item {
+        font-size: 16px; 
+    }
+
+    .proceed-to-checkout {
+        font-size: 14px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .cartitems {
+        margin: 40px 10px; 
+    }
+
+    .cartitems-format,
+    .cartitem-format-main {
+        grid-template-columns: 1fr; 
+    }
+
+    .cartitems-total {
+        width: 100%; 
+        padding: 10px; 
+    }
+
+    .cartitems-total h1 {
+        font-size: 16px; 
+        margin-bottom: 5px; 
+    }
+
+    .cartitems-total-item {
+        font-size: 14px; 
+    }
+
+    .proceed-to-checkout {
+        font-size: 12px; 
+    }
 }

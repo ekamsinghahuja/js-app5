@@ -16,20 +16,87 @@ const ShopContextProvider = (props) => {
         }
         return cart;
     }
-    const [cartItems,setItems] = useState(getCartDefault());
-    useEffect(() => {
-        fetch('https://ecomm-website-backend.onrender.com/allproduct')
-            .then(response => response.json())
-            .then(data => setAllProduct(data))
+    const [cartItems, setCartData] = useState(getCartDefault);
+    const fetchCartData = async () => {
+        const token = localStorage.getItem('auth-token'); 
+        if (token) {
+            const response = await fetch('http://localhost:9000/cartget', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            const data = await response.json();
+            setCartData(data.cartData);
+            // console.log(cartItems)
+            // console.log(data)
+        }
+    };
+    const fetchAllProducts = async () => {
+        try {
+            const response = await fetch('https://ecomm-website-backend.onrender.com/allproduct');
+            const data = await response.json();
+            // console.log(data);
+            setAllProduct(data);
             
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    };
+    useEffect(() => {
+        
+        fetchAllProducts()
+        fetchCartData()
+        
     }, []);
+    
     const addToCart = (itemId)=>{
-        setItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
-        console.log(cartItems);
+        setCartData((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+        if (localStorage.getItem('auth-token')) {
+            const authToken = localStorage.getItem('auth-token');
+    
+            fetch('http://localhost:9000/addtocart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${authToken}`, // Assuming you are using JWT authorization
+                },
+                body: JSON.stringify({
+                    itemId: itemId,
+                }),
+            })
+            .then((response) =>response.json())
+            .then((data)=>console.log(data))
+        } else {
+            // Handle case where user is not authenticated
+            console.log('User is not authenticated. Please login.');
+        }
     }
     const removeToCart = (itemId)=>{
-        setItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+        setCartData((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+        if (localStorage.getItem('auth-token')) {
+            const authToken = localStorage.getItem('auth-token');
+    
+            fetch('http://localhost:9000/removefromcart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${authToken}`,
+                },
+                body: JSON.stringify({
+                    itemId: itemId,
+                }),
+            })
+            .then((response) =>response.json())
+            .then((data)=>console.log(data))
+        } else {
+           
+            console.log('User is not authenticated. Please login.');
+        }
     }
+
+
     const getTotalCartAmount = ()=>{
         let total=0;
         for(const item in cartItems){
@@ -41,6 +108,7 @@ const ShopContextProvider = (props) => {
         return total;
     }
     const getTotalCartitems = ()=>{
+        if (all_product.length === 0) return 0; 
         let total=0;
         for(const item in cartItems){
             if(cartItems[item]>0){
@@ -60,3 +128,6 @@ const ShopContextProvider = (props) => {
 };
 
 export default ShopContextProvider;
+
+
+

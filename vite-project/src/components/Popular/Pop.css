@@ -3,18 +3,18 @@
     flex-direction: column;
     align-items: center; 
     gap: 20px;
-    padding: 20px; /* Add padding to create space around the content */
+    padding: 20px;
+    margin-bottom: 100px;
 }
 
 .popular h1 {
     color: #171717;
-    /* font-size: 2.5rem;  */
     font-weight: 600;
-    margin-bottom: 10px; /* Add margin bottom to create space between heading and hr */
+    margin-bottom: 10px; 
 }
 
 .popular hr {
-    width: 200px; /* Ensure the hr spans the entire width */
+    width: 200px;
     height: 6px;
 
     border-radius: 10px;
@@ -22,13 +22,39 @@
 }
 .popular-item{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
-    gap: 20px;
-    justify-content: center;
-    width: 100%; /* Ensure the grid occupies the full width */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 50px;
+    gap:30px;
 
 }
+@media (max-width: 1400px) {
+    .popular-item {
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px;
+    }
+}
 
+@media (max-width: 768px) {
+    .popular {
+        padding: 10px; 
+    }
+    .popular-item {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popular {
+        padding: 5px;
+    }
+    .popular h1 {
+        font-size: 1.2rem; 
+    }
+    .popular-item  {
+        gap: 10px; 
+    }
+}
 
 
 /* Style for individual item can be added here if necessary */
