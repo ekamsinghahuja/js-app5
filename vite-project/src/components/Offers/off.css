@@ -1,48 +1,74 @@
-.offer {
-    width: 65%;
-    height: 60vh;
-    display: flex;
-    margin: auto;
-    padding: 0px 140px;
-    margin-bottom: 150px;
-    background:linear-gradient(180deg,#fde1ff 0%,#e1ffea22 60%);
-}
 
-.offer-left {
+
+/* off.css */
+
+.offer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure this is as per your container height */
+    background: linear-gradient(to right, #000000, #434343);
+  }
+  
+  .offer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Adjust as needed */
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .offer-left {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-.offer-left h1 {
-    font-size: 90px;
-    color: #171717;
-    font-weight: 600;
-}
-
-.offer-left p {
-    color: #171717;
-    font-size: 22px;
-    font-weight: 600;
-}
-
-.offer-left button {
-    background-color: #ff4141;
+    align-items: center; /* Center content horizontally */
+    text-align: center;  /* Center text */
+    padding: 20px;
+  }
+  
+  .offer-left h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  .offer-left p {
+    font-size: 1.2rem;
+    color: #777;
+    margin: 10px 0;
+  }
+  
+  .offer-left button {
+    background-color: #ff6600;
     color: white;
-    border: none;
     padding: 10px 20px;
-    font-size: 1rem;
+    border: none;
     border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-.offer-left button:hover {
-    background-color: #e63232; /* Darken color on hover */
-}
-
-.offers-right img {
-    max-width: 100%;
-    height: auto;
-}
+    transition: background-color 0.3s ease;
+  }
+  
+  .offer-left button:hover {
+    background-color: #ff4500;
+  }
+  
+  .offers-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .offers-right img {
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

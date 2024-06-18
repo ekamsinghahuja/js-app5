@@ -3,6 +3,8 @@
     justify-content: space-around;
     padding: 16px;
     box-shadow: 0 1px 3px -2px black;
+    background: linear-gradient(to right, #000000, #434343);
+    
   }
   .nav-logo{
     display:flex;
@@ -14,7 +16,7 @@
     align-items: center;
     list-style: none;
     gap:50px;
-    color:#626262;
+    color:white;
     font-size:20px;
     font-weight: 500;
   }
@@ -70,3 +72,6 @@
   }
   
   
+.heading-title{
+  color: white;
+}
